@@ -72,31 +72,29 @@ sᴜᴄᴄᴇssғᴜʟʟʏ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ"""
 
 If there is an error, ask in the support group @UnformHelp</b>"""
 
-    STATUS_TXT = """<b><u>♻️ ʙᴏᴛ ᴅᴀᴛᴀʙᴀsᴇ </u>
+    STATUS_TXT = """<b>📊 ᴛᴏᴛᴀʟ ᴜsᴇʀs: <code>{}</code>
+🧩 ᴛᴏᴛᴀʟ ᴄʜᴀᴛs: <code>{}</code>
+💾 ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ: <code>{}</code> 
+🗂️ ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code>
 
-» ᴛᴏᴛᴀʟ ᴜsᴇʀs - <code>{}</code>
-» ᴛᴏᴛᴀʟ ɢʀᴏᴜᴘs - <code>{}</code>
-» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+📑 DB1 ғɪʟᴇs: <code>{}</code>
+📑 DB2 ғɪʟᴇs: <code>{}</code>
+📑 DB3 ғɪʟᴇs: <code>{}</code>
+📊 ᴛᴏᴛᴀʟ ғɪʟᴇs: <code>{}</code>
 
-<u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 1 </u>
+🧮 DB2 sɪᴢᴇ: <code>{}</code>
+🗑️ DB2 ғʀᴇᴇ: <code>{}</code>
 
-» ᴛᴏᴛᴀʟ ꜰɪʟᴇs - <code>{}</code>
-» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+🧮 DB3 sɪᴢᴇ: <code>{}</code>
+🗑️ DB3 ғʀᴇᴇ: <code>{}</code>
 
-<u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 2 </u>
+🧮 DB4 sɪᴢᴇ: <code>{}</code>
+🗑️ DB4 ғʀᴇᴇ: <code>{}</code>
 
-» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+⏰ ᴜᴘᴛɪᴍᴇ: <code>{}</code>
+📊 ʀᴀᴍ: <code>{}%</code>
+📡 ᴄᴘᴜ: <code>{}%</code></b>"""
 
-<u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 3 </u>
-
-» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
-
-
-<u>🤖 ʙᴏᴛ ᴅᴇᴛᴀɪʟs </u>
-
-» ᴜᴘᴛɪᴍᴇ - <code>{}</code>
-» ʀᴀᴍ - <code>{}%</code>
-» ᴄᴘᴜ - <code>{}%</code></b>"""
 
     NEW_USER_TXT = """<b>#New_User {}
 
