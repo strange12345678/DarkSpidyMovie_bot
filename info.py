@@ -49,8 +49,8 @@ DATABASE_NAME = environ.get("DATABASE_NAME", "Cluster0")
 
 # Files index database url
 FILES_DATABASE = environ.get("FILES_DATABASE", "")
-FILES_DATABASE_2 = environ.get("FILES_DATABASE_2", "")
-FILES_DATABASE_3 = environ.get("FILES_DATABASE_3", "")
+FILES_DATABASE_2 = environ.get("FILES_DATABASE_2", "mongodb+srv://gekasi8728:kingkhan@cluster0.ilgcdab.mongodb.net/?retryWrites=true&w=majority")
+FILES_DATABASE_3 = environ.get("FILES_DATABASE_3", "mongodb+srv://gekasi8728:kingkhan@cluster0.ilgcdab.mongodb.net/?retryWrites=true&w=majority")
 COLLECTION_NAME = environ.get("COLLECTION_NAME", "jisshu")
 
 # Other Channel's
