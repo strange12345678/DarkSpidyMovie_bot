@@ -104,8 +104,8 @@ async def get_ststs(bot, message):
     groups = await db.total_chat_count()
     size = get_size(await db.get_db_size())
     free = get_size(536870912)
-        
-        # Get file counts from all databases
+    
+    # Get file counts from all databases
     from database.ia_filterdb import databases, COLLECTION_NAME
     
     files_db1 = await Media.count_documents()
@@ -126,7 +126,7 @@ async def get_ststs(bot, message):
     cpu = psutil.cpu_percent()
     await message.reply_text(
         script.STATUS_TXT.format(
-                        users, groups, size, free, total_files, files_db1, db2_size, db2_free, files_db2, db3_size, db3_free, files_db3, db4_size, db4_free, uptime, ram, cpu
+            users, groups, size, free, total_files, files_db1, db2_size, db2_free, files_db2, db3_size, db3_free, files_db3, db4_size, db4_free, uptime, ram, cpu
         )
     )
 
