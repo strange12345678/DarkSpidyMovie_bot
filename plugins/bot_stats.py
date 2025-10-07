@@ -105,10 +105,12 @@ async def get_ststs(bot, message):
     size = get_size(await db.get_db_size())
     free = get_size(536870912)
         
-    # Get file counts from all databases
+        # Get file counts from all databases
+    from database.ia_filterdb import databases, COLLECTION_NAME
+    
     files_db1 = await Media.count_documents()
-    files_db2 = await Media.count_documents() if len(databases) > 1 else 0
-    files_db3 = await Media.count_documents() if len(databases) > 2 else 0
+    files_db2 = await databases[1][COLLECTION_NAME].count_documents({}) if len(databases) > 1 else 0
+    files_db3 = await databases[2][COLLECTION_NAME].count_documents({}) if len(databases) > 2 else 0
     
     # Calculate total files
     total_files = files_db1 + files_db2 + files_db3
