@@ -19,16 +19,15 @@ SESSION = environ.get("SESSION", "Media_search")
 API_ID = int(environ.get("API_ID", ""))
 API_HASH = environ.get("API_HASH", "")
 BOT_TOKEN = environ.get("BOT_TOKEN", "")
-PORT = environ.get("PORT", "8082")
+PORT = environ.get("PORT", "5000")
 
 # Owners
 ADMINS = [
     int(admin) if id_pattern.search(admin) else admin
     for admin in environ.get("ADMINS", "5282274756").split()
 ]
-OWNER_USERNAME = environ.get(
-    "OWNER_USERNAME", "DarkWorld008"
-)  # without @ or https://t.me/
+OWNER_USERNAME = environ.get("OWNER_USERNAME",
+                             "DarkWorld008")  # without @ or https://t.me/
 USERNAME = environ.get("USERNAME", "Darkworld008")  # ADMIN USERNAME
 
 # Database Channel
@@ -50,22 +49,23 @@ DATABASE_NAME = environ.get("DATABASE_NAME", "Cluster0")
 
 # Files index database url
 FILES_DATABASE = environ.get("FILES_DATABASE", "")
+FILES_DATABASE_2 = environ.get("FILES_DATABASE_2", "")
+FILES_DATABASE_3 = environ.get("FILES_DATABASE_3", "")
 COLLECTION_NAME = environ.get("COLLECTION_NAME", "jisshu")
 
 # Other Channel's
 SUPPORT_GROUP = int(environ.get("SUPPORT_GROUP", "-1002681593596"))
 DELETE_CHANNELS = int(environ.get("DELETE_CHANNELS", "0"))
 request_channel = environ.get("REQUEST_CHANNEL", "-1002783635871")
-REQUEST_CHANNEL = (
-    int(request_channel)
-    if request_channel and id_pattern.search(request_channel)
-    else None
-)
-MOVIE_UPDATE_CHANNEL = int(environ.get("MOVIE_UPDATE_CHANNEL", "-1002502729198"))
+REQUEST_CHANNEL = (int(request_channel) if request_channel
+                   and id_pattern.search(request_channel) else None)
+MOVIE_UPDATE_CHANNEL = int(
+    environ.get("MOVIE_UPDATE_CHANNEL", "-1002502729198"))
 
 # Added Link Here Not Id
 SUPPORT_CHAT = environ.get("SUPPORT_CHAT", "https://t.me/UniformHelp")
-MOVIE_GROUP_LINK = environ.get("MOVIE_GROUP_LINK", "https://t.me/Move_Download")
+MOVIE_GROUP_LINK = environ.get("MOVIE_GROUP_LINK",
+                               "https://t.me/Move_Download")
 
 # Verification
 IS_VERIFY = is_enabled("IS_VERIFY", True)
@@ -73,18 +73,16 @@ IS_VERIFY = is_enabled("IS_VERIFY", True)
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/UniformHelp/1499/2096")
 TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/UniformHelp/1499/")
 TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/UniformHelp/1499/")
-VERIFY_IMG = environ.get(
-    "VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg"
-)
-SHORTENER_API = environ.get("SHORTENER_API", "25e3fd19a4ac7dee2affd0c1890129b60c6be2d7")
+VERIFY_IMG = environ.get("VERIFY_IMG",
+                         "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
+SHORTENER_API = environ.get("SHORTENER_API",
+                            "25e3fd19a4ac7dee2affd0c1890129b60c6be2d7")
 SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "linkshortify.com")
-SHORTENER_API2 = environ.get(
-    "SHORTENER_API2", "25e3fd19a4ac7dee2affd0c1890129b60c6be2d7"
-)
+SHORTENER_API2 = environ.get("SHORTENER_API2",
+                             "25e3fd19a4ac7dee2affd0c1890129b60c6be2d7")
 SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "linkshortify.com")
-SHORTENER_API3 = environ.get(
-    "SHORTENER_API3", "25e3fd19a4ac7dee2affd0c1890129b60c6be2d7"
-)
+SHORTENER_API3 = environ.get("SHORTENER_API3",
+                             "25e3fd19a4ac7dee2affd0c1890129b60c6be2d7")
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", "linkshortify.com")
 TWO_VERIFY_GAP = int(environ.get("TWO_VERIFY_GAP", "43200"))
 THREE_VERIFY_GAP = int(environ.get("THREE_VERIFY_GAP", "14400"))
@@ -127,22 +125,19 @@ YEARS = [f"{i}" for i in range(2025, 2002, -1)]
 SEASONS = [f"season {i}" for i in range(1, 23)]
 
 # Pictures And Reaction
-START_IMG = (
-    environ.get(
-        "START_IMG",
-        "https://envs.sh/iEX.jpg https://envs.sh/iEX.jpg",
-    )
-).split()
-FORCESUB_IMG = environ.get("FORCESUB_IMG", "https://i.ibb.co/ZNC1Hnb/ad3f2c88a8f2.jpg")
+START_IMG = (environ.get(
+    "START_IMG",
+    "https://envs.sh/iEX.jpg https://envs.sh/iEX.jpg",
+)).split()
+FORCESUB_IMG = environ.get("FORCESUB_IMG",
+                           "https://i.ibb.co/ZNC1Hnb/ad3f2c88a8f2.jpg")
 REFER_PICS = (environ.get("REFER_PICS", "https://envs.sh/PSI.jpg")).split()
-PAYPICS = (
-    environ.get("PAYPICS", "https://envs.sh/ekL.jpg")
-).split()
+PAYPICS = (environ.get("PAYPICS", "https://envs.sh/ekL.jpg")).split()
 SUBSCRIPTION = environ.get(
-    "SUBSCRIPTION", "https://i.ibb.co/k69XwnT1/photo-2024-05-08-17-36-45-7546182291244974096.jpg"
+    "SUBSCRIPTION",
+    "https://i.ibb.co/k69XwnT1/photo-2024-05-08-17-36-45-7546182291244974096.jpg"
 )
 REACTIONS = ["👀", "😱", "🔥", "😍", "🎉", "🥰", "😇", "⚡"]
-
 
 # Other Funtions
 FILE_AUTO_DEL_TIMER = int(environ.get("FILE_AUTO_DEL_TIMER", "600"))
@@ -206,19 +201,49 @@ admin_cmds = [
 ]
 
 cmds = [
-    {"start": "Start The Bot"},
-    {"most": "Get Most Searches Button List"},
-    {"trend": "Get Top Trending Button List"},
-    {"mostlist": "Show Most Searches List"},
-    {"trendlist": "𝖦𝖾𝗍 𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 𝖡𝗎𝗍𝗍𝗈𝗇 𝖫𝗂𝗌t"},
-    {"plan": "Check Available Premium Membership Plans"},
-    {"myplan": "Check Your Currunt Plan"},
-    {"refer": "To Refer Your Friend And Get Premium"},
-    {"stats": "Check My Database"},
-    {"id": "Get Telegram Id"},
-    {"font": "To Generate Cool Fonts"},
-    {"details": "Check Group Details"},
-    {"settings": "Change Bot Setting"},
-    {"grp_cmds": "Check Group Commands"},
-    {"admin_cmds": "Bot Admin Commands"},
+    {
+        "start": "Start The Bot"
+    },
+    {
+        "most": "Get Most Searches Button List"
+    },
+    {
+        "trend": "Get Top Trending Button List"
+    },
+    {
+        "mostlist": "Show Most Searches List"
+    },
+    {
+        "trendlist": "𝖦𝖾𝗍 𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 𝖡𝗎𝗍𝗍𝗈𝗇 𝖫𝗂𝗌t"
+    },
+    {
+        "plan": "Check Available Premium Membership Plans"
+    },
+    {
+        "myplan": "Check Your Currunt Plan"
+    },
+    {
+        "refer": "To Refer Your Friend And Get Premium"
+    },
+    {
+        "stats": "Check My Database"
+    },
+    {
+        "id": "Get Telegram Id"
+    },
+    {
+        "font": "To Generate Cool Fonts"
+    },
+    {
+        "details": "Check Group Details"
+    },
+    {
+        "settings": "Change Bot Setting"
+    },
+    {
+        "grp_cmds": "Check Group Commands"
+    },
+    {
+        "admin_cmds": "Bot Admin Commands"
+    },
 ]
