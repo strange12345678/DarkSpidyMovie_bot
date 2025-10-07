@@ -6,11 +6,25 @@ from pymongo.errors import DuplicateKeyError
 from umongo import Instance, Document, fields
 from motor.motor_asyncio import AsyncIOMotorClient
 from marshmallow.exceptions import ValidationError
-from info import FILES_DATABASE, DATABASE_NAME, COLLECTION_NAME, MAX_BTN
+from info import FILES_DATABASE, FILES_DATABASE_2, FILES_DATABASE_3, DATABASE_NAME, COLLECTION_NAME, MAX_BTN
 
-client = AsyncIOMotorClient(FILES_DATABASE)
-mydb = client[DATABASE_NAME]
-instance = Instance.from_db(mydb)
+clients = []
+databases = []
+instances = []
+
+for db_uri in [FILES_DATABASE, FILES_DATABASE_2, FILES_DATABASE_3]:
+    if db_uri:
+        client = AsyncIOMotorClient(db_uri)
+        db = client[DATABASE_NAME]
+        clients.append(client)
+        databases.append(db)
+        instances.append(Instance.from_db(db))
+
+if not instances:
+    raise ValueError("At least one FILES_DATABASE must be configured")
+
+mydb = databases[0]
+instance = instances[0]
 
 
 @instance.register
@@ -30,6 +44,18 @@ class Media(Document):
 
 async def get_files_db_size():
     return (await mydb.command("dbstats"))["dataSize"]
+
+
+async def get_files_db_size_2():
+    if len(databases) > 1:
+        return (await databases[1].command("dbstats"))["dataSize"]
+    return 0
+
+
+async def get_files_db_size_3():
+    if len(databases) > 2:
+        return (await databases[2].command("dbstats"))["dataSize"]
+    return 0
 
 
 async def save_file(media):
