@@ -126,7 +126,7 @@ async def get_ststs(bot, message):
     cpu = psutil.cpu_percent()
     await message.reply_text(
         script.STATUS_TXT.format(
-                        users, groups, size, free, files_db1, files_db2, files_db3, total_files, db2_size, db2_free, db3_size, db3_free, db4_size, db4_free, uptime, ram, cpu
+                        users, groups, size, free, total_files, files_db1, db2_size, db2_free, files_db2, db3_size, db3_free, files_db3, db4_size, db4_free, uptime, ram, cpu
         )
     )
 
