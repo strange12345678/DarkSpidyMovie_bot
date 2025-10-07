@@ -44,13 +44,13 @@ LOG_API_CHANNEL = int(environ.get("LOG_API_CHANNEL", "-1002598950094"))
 LOG_VR_CHANNEL = int(environ.get("LOG_VR_CHANNEL", "-1002681593596"))
 
 # MongoDB
-DATABASE_URI = environ.get("DATABASE_URI", "mongodb+srv://bibekkumarmahato0_dark-users:3w8Qr9F75N7G9nNP@cluster0.cyda7pu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI = environ.get("DATABASE_URI", "")
 DATABASE_NAME = environ.get("DATABASE_NAME", "Cluster0")
 
 # Files index database url
-FILES_DATABASE = environ.get("FILES_DATABASE", "mongodb+srv://mahatobibek221034_db_user:MAgxnElmQsB0dknb@cluster0.c5isxvv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-FILES_DATABASE_2 = environ.get("FILES_DATABASE_2", "mongodb+srv://mahatobibek221034_db_files:jlPGQF189vnCYa8P@cluster0.v5weoma.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-FILES_DATABASE_3 = environ.get("FILES_DATABASE_3", "mongodb+srv://testsubjectv67_db_user:1gaocN75TMFPtRnt@cluster0.aug3tjf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+FILES_DATABASE = environ.get("FILES_DATABASE", "")
+FILES_DATABASE_2 = environ.get("FILES_DATABASE_2", "")
+FILES_DATABASE_3 = environ.get("FILES_DATABASE_3", "")
 COLLECTION_NAME = environ.get("COLLECTION_NAME", "jisshu")
 
 # Other Channel's
