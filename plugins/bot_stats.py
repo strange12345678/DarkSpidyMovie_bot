@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from info import ADMINS, LOG_CHANNEL, USERNAME
 from database.users_chats_db import db
-from database.ia_filterdb import Media, get_files_db_size, get_files_db_size_2, get_files_db_size_3
+from database.ia_filterdb import Media, get_files_db_size, get_files_db_size_2, get_files_db_size_3, databases
 from utils import get_size, temp
 from Script import script
 import psutil
@@ -104,7 +104,15 @@ async def get_ststs(bot, message):
     groups = await db.total_chat_count()
     size = get_size(await db.get_db_size())
     free = get_size(536870912)
-    files = await Media.count_documents()
+        
+    # Get file counts from all databases
+    files_db1 = await Media.count_documents()
+    files_db2 = await Media.count_documents() if len(databases) > 1 else 0
+    files_db3 = await Media.count_documents() if len(databases) > 2 else 0
+    
+    # Calculate total files
+    total_files = files_db1 + files_db2 + files_db3
+    
     db2_size = get_size(await get_files_db_size())
     db2_free = get_size(536870912)
     db3_size = get_size(await get_files_db_size_2())
@@ -116,7 +124,7 @@ async def get_ststs(bot, message):
     cpu = psutil.cpu_percent()
     await message.reply_text(
         script.STATUS_TXT.format(
-            users, groups, size, free, files, db2_size, db2_free, db3_size, db3_free, db4_size, db4_free, uptime, ram, cpu
+                        users, groups, size, free, files_db1, files_db2, files_db3, total_files, db2_size, db2_free, db3_size, db3_free, db4_size, db4_free, uptime, ram, cpu
         )
     )
 
