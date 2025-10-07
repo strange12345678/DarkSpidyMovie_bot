@@ -85,12 +85,10 @@ If there is an error, ask in the support group @UnformHelp</b>"""
 
 <u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 2 </u>
 
-» ᴛᴏᴛᴀʟ ꜰɪʟᴇs - <code>{}</code>
 » ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
 
 <u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 3 </u>
 
-» ᴛᴏᴛᴀʟ ꜰɪʟᴇs - <code>{}</code>
 » ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
 
 
