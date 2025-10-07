@@ -78,10 +78,19 @@ If there is an error, ask in the support group @UnformHelp</b>"""
 » ᴛᴏᴛᴀʟ ɢʀᴏᴜᴘs - <code>{}</code>
 » ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
 
-<u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ </u>
+<u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 1 </u>
 
 » ᴛᴏᴛᴀʟ ꜰɪʟᴇs - <code>{}</code>
 » ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+
+<u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 2 </u>
+
+» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+
+<u>📁 ꜰɪʟᴇs ᴅᴀᴛᴀʙᴀsᴇ 3 </u>
+
+» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+
 
 <u>🤖 ʙᴏᴛ ᴅᴇᴛᴀɪʟs </u>
 
