@@ -1580,7 +1580,7 @@ async def clean_db_command(client, message):
 
         # === Clean DB2 (only if MULTIPLE_DB is True) ===
         if MULTIPLE_DB:
-            mongo2 = AsyncIOMotorClient(DATABASE_URI2)
+            mongo2 = AsyncIOMotorClient(FILES_DATABASE)
             db2 = mongo2[DATABASE_NAME]
             col2 = db2[COLLECTION_NAME]
             result2 = await col2.update_many({}, {"$unset": fields_to_unset})
