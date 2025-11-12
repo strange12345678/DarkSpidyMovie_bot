@@ -1555,13 +1555,19 @@ async def reset_group_command(client, message):
 
 
 
-from motor.motor_asyncio import AsyncIOMotorClient
-
+from motor.motor_asyncio import AsyncIOMotorClient       
 @Client.on_message(filters.command("cleandb") & filters.user(ADMINS))
 async def clean_db_command(client, message):
-    await message.reply_text("🧹 Cleaning database(s)... Please wait ⏳")
+    
+    await message.reply_text("🧹 Cleaning database... Please wait ⏳")
 
     try:
+        # Connect to your existing MongoDB
+        mongo = AsyncIOMotorClient(FILES_DATABASE_2)
+        db = mongo[DATABASE_NAME]
+        collection = db["rrbz"]
+
+        # Fields to remove
         fields_to_unset = {
             "file_ref": "",
             "file_type": "",
@@ -1569,29 +1575,15 @@ async def clean_db_command(client, message):
             "caption": ""
         }
 
-        summary = []
-
-        # === Clean DB1 ===
-        mongo1 = AsyncIOMotorClient(DATABASE_URI)
-        db1 = mongo1[DATABASE_NAME]
-        col1 = db1[COLLECTION_NAME]
-        result1 = await col1.update_many({}, {"$unset": fields_to_unset})
-        summary.append(f"🗃️ DB1 — Matched: <code>{result1.matched_count}</code>, Modified: <code>{result1.modified_count}</code>")
-
-        # === Clean DB2 (only if MULTIPLE_DB is True) ===
-        if MULTIPLE_DB:
-            mongo2 = AsyncIOMotorClient(FILES_DATABASE)
-            db2 = mongo2[DATABASE_NAME]
-            col2 = db2[COLLECTION_NAME]
-            result2 = await col2.update_many({}, {"$unset": fields_to_unset})
-            summary.append(f"🗃️ DB2 — Matched: <code>{result2.matched_count}</code>, Modified: <code>{result2.modified_count}</code>")
-        else:
-            summary.append("⚙️ MULTIPLE_DB = False → Skipped cleaning DB2.")
+        # Run cleanup
+        result = await collection.update_many({}, {"$unset": fields_to_unset})
 
         await message.reply_text(
-            "✅ <b>Cleanup Complete!</b>\n\n" + "\n".join(summary)
+            f"✅ <b>Cleanup Complete!</b>\n\n"
+            f"🗃️ Collection: <code>rrbz</code>\n"
+            f"📦 Matched Docs: <code>{result.matched_count}</code>\n"
+            f"🧹 Modified Docs: <code>{result.modified_count}</code>"
         )
 
     except Exception as e:
         await message.reply_text(f"❌ <b>Error while cleaning DB:</b>\n<code>{e}</code>")
- 
