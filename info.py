@@ -168,7 +168,7 @@ if "DYNO" in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("FQDN", "https://t.me/Move_Download")
+URL = environ.get("FQDN", "thoughtful-gisele-strange12345678-03a5d35d.koyeb.app/")
 
 # Commands
 admin_cmds = [
